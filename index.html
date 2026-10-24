@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Login Module Example</title>
+
+    <!-- 1. jQuery (Required for $.ajax inside EthersAuth) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 2. Ethers.js UMD Script (Sets up window.ethers globally) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.17.0/ethers.umd.min.js"></script>
+</head>
+<body style="background: #111; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+
+    <div style="text-align: center;">
+        <h1>Web3 Authentication</h1>
+        <p id="status">Ready to authenticate...</p>
+        <button id="loginBtn" style="padding: 12px 24px; font-size: 16px; cursor: pointer; border-radius: 6px; border: none; background: #0070f3; color: white;">
+            Connect Wallet & Sign In
+        </button>
+    </div>
+
+    <!-- 3. Module Script Importing EthersAuth -->
+    <script type="module">
+        import { EthersAuth } from "./js/hook/ethers-login.js";
+
+        const loginBtn = document.getElementById("loginBtn");
+        const status = document.getElementById("status");
+
+        loginBtn.addEventListener("click", () => {
+            status.textContent = "Authenticating...";
+
+            // Initialize Web3 Authentication Flow
+            EthersAuth.initAuth((success) => {
+              if(success) 
+                //your app init here
+              
+            })
+        });
+    </script>
+
+</body>
+</html>
