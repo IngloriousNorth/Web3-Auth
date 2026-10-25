@@ -1,7 +1,8 @@
 #README
+<script type='module'>EtherAuth((authenticated){})</script> 
 
+#MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, preferably module-scoped
 
-#MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE
 ```<script type='module'>
   let isAuthenticated;
   EtherAuth((authenticated)=>{
