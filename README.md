@@ -3,8 +3,8 @@
 
 #MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, preferably module-scoped
 
-```<script type='module'>
-  let isAuthenticated;
+<script type='module'>
+```  let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
     if(isAuthenticated) //wrong
@@ -15,7 +15,7 @@
 ```
 
 #JAVASCRIPT WEB3 CLOSURE VULNERABILITY:
- ```<script> <!-- isAuthenticated exposed to console !-->
+ <script> <!-- isAuthenticated hoisted to globals scope !-->
   let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
@@ -25,5 +25,5 @@
       protectedFn()
     if(isAuthenticated) //ABSOLUTELY DO NOT DO THIS
       protectedFn()
-  </script>
 ```
+  </script>
