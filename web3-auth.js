@@ -1,5 +1,3 @@
-// js/hook/ethers-login.js
-import 'ethers'
 const server_url = "/ethers-login-auth";
 let authToken = null;
 
