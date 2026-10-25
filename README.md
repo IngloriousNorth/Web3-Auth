@@ -1,6 +1,8 @@
 #README
 <script type='module'>EtherAuth((authenticated){})</script> 
 
+Best Practice: use authenticated var from closure cb() to protect functions
+
 #MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, preferably module-scoped
 
 <script type='module'>
