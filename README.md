@@ -3,10 +3,11 @@
 
 Best Practice: use authenticated var from closure cb() to protect functions
 
-#Gemini set a let isAuthenticated = authenticated, within a module scope. So if you use AI, MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, and best practice is module-scoped.
+#For your index.html, Gemini set a let isAuthenticated = authenticated, within a module scope. So if you use AI, MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, and best practice is module-scoped.
 
 <script type='module'>
-```  let isAuthenticated;
+```  <script type="module"> 
+  let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
     if(isAuthenticated) //wrong
@@ -15,9 +16,12 @@ Best Practice: use authenticated var from closure cb() to protect functions
       protectedFn()
   </script>
 ```
+</script>
 
 #JAVASCRIPT WEB3 CLOSURE VULNERABILITY:
  <script> <!-- isAuthenticated hoisted to globals scope !-->
+```
+<script>
   let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
@@ -27,5 +31,6 @@ Best Practice: use authenticated var from closure cb() to protect functions
       protectedFn()
     if(isAuthenticated) //ABSOLUTELY DO NOT DO THIS
       protectedFn()
+</script>
 ```
-  </script>
+</script>
