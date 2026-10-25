@@ -6,7 +6,8 @@ Best Practice: use authenticated var from closure cb() to protect functions
 #For your index.html, Gemini set a let isAuthenticated = authenticated, within a module scope. So if you use AI, MAKE SURE YOUR isAuthenticated variable in the EtherAuth() callback fn() IS IN A CLOSURE, and best practice is module-scoped.
 
 <script type='module'>
-```  <script type="module"> 
+```  
+<script type="module"> 
   let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
