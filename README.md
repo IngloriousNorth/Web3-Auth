@@ -11,7 +11,7 @@ Best Practice: use authenticated var from closure cb() to protect functions
   let isAuthenticated;
   EtherAuth((authenticated)=>{
     isAuthenticated = authenticated;
-    if(isAuthenticated) //wrong
+    if(isAuthenticated) //not best practice
       protectedFn()
     if(authenticated) //correct
       protectedFn()
