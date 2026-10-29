@@ -1,4 +1,5 @@
-#README
+# DID NOT INCLUDE SERVER FN
+
 <script type='module'>EtherAuth((authenticated){})</script> 
 
 Best Practice: use authenticated var from closure cb() to protect functions
